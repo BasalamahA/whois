@@ -15,6 +15,9 @@ strategy:
       python.version: '3.7'
 
 steps:
+- script: 
+    docker login -u $(dockerid) -p $(dockerpass)
+    
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
