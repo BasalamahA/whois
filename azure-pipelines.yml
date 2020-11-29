@@ -16,11 +16,8 @@ strategy:
 
 steps:
 - script: 
-    nmp install 
-    nmp test 
     docker build -f dockerfile -t $(Dockerid)/$(imageid)
     docker login -u $(dockerid) -p $(dockerpass)
-
   env:
     pawd : $(dockerpass)
     
