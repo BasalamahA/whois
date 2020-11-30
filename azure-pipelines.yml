@@ -14,13 +14,6 @@ strategy:
     Python37:
       python.version: '3.7'
 
-steps:
-- script: 
-    docker build -f dockerfile -t $(Dockerid)/$(imageid)
-    docker login -u $(dockerid) -p $(dockerpass)
-  env:
-    pawd : $(dockerpass)
-    
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
