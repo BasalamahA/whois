@@ -16,7 +16,8 @@ strategy:
 
 steps:
 - script:
-    docker login -u $(dockerid) -p $pswd
+    # docker login -u $(dockerid) -p $pswd
+    docker login -u localhost:8080
     docker build -f dockerfile -t $(Dockerid)/$(imageid)
   env:
     pawd : $(dockerpass)
