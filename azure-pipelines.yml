@@ -15,9 +15,9 @@ strategy:
       python.version: '3.7'
 
 steps:
-- script: 
+- script:
+    docker login -u $(dockerid) -p $(dockerpass) 
     docker build -f dockerfile -t $(Dockerid)/$(imageid)
-    docker login -u $(dockerid) -p $(dockerpass)
   env:
     pawd : $(dockerpass)
     
